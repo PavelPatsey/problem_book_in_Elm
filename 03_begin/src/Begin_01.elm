@@ -53,7 +53,6 @@ view model =
     [ div [] [ text "Сторона квадрата а = " ]
     , input [ placeholder "Text to reverse", value model.content, onInput Change ] []
     , div [] [ text "Периметр p = " ]
-    -- , div [] [ text (String.fromInt (4 * Maybe.withDefault 0 ( String.toInt model.content))) ]
     , div [] [ text (String.fromInt (begin_1 (Maybe.withDefault 0 ( String.toInt model.content)))) ]
     ]
 
