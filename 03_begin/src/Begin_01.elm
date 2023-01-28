@@ -1,8 +1,4 @@
--- A text input for reversing text. Very useful!
---
--- Read how it works:
---   https://guide.elm-lang.org/architecture/text_fields.html
---
+module Begin_01 exposing (..)
 
 import Browser
 import Html exposing (Html, Attribute, div, input, text)
@@ -56,6 +52,11 @@ view model =
   div []
     [ div [] [ text "Сторона квадрата а = " ]
     , input [ placeholder "Text to reverse", value model.content, onInput Change ] []
-    , div [] [ text "Периметр p =" ]
-    , div [] [ text (String.fromInt (4 * Maybe.withDefault 0 ( String.toInt model.content))) ]
+    , div [] [ text "Периметр p = " ]
+    -- , div [] [ text (String.fromInt (4 * Maybe.withDefault 0 ( String.toInt model.content))) ]
+    , div [] [ text (String.fromInt (begin_1 (Maybe.withDefault 0 ( String.toInt model.content)))) ]
     ]
+
+begin_1 : Int -> Int
+begin_1 a =
+  a * 4
