@@ -1,7 +1,7 @@
 module Begin_01 exposing (..)
 
 import Browser
-import Html exposing (Attribute, Html, div, input, text)
+import Html exposing (Html, div, input, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
 
@@ -10,6 +10,7 @@ import Html.Events exposing (onInput)
 -- MAIN
 
 
+main : Program () Model Msg
 main =
     Browser.sandbox { init = init, update = update, view = view }
 
