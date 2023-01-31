@@ -2,7 +2,7 @@
 -- периметр P = 2·(a + b).
 
 
-module Begin_03 exposing (..)
+module Begin_03_v1_tuple exposing (..)
 
 import Browser
 import Html exposing (Attribute, Html, div, input, text)
