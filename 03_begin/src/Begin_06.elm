@@ -71,6 +71,18 @@ view model =
         , input [ placeholder "b = ", value model.b, onInput Change_b ] []
         , div [] [ text "Длина ребра c = " ]
         , input [ placeholder "c = ", value model.c, onInput Change_c ] []
+        , div [] [ text "Объем V = a·b·c = " ]
+        , div []
+            [ text
+                (String.fromFloat
+                    (calculate_volume
+                        ( Maybe.withDefault 0 (String.toFloat model.a)
+                        , Maybe.withDefault 0 (String.toFloat model.b)
+                        , Maybe.withDefault 0 (String.toFloat model.c)
+                        )
+                    )
+                )
+            ]
         , div [] [ text "Площадь поверхности S = 2·(a·b + b·c + a·c) = " ]
         , div []
             [ text
@@ -84,6 +96,11 @@ view model =
                 )
             ]
         ]
+
+
+calculate_volume : ( Float, Float, Float ) -> Float
+calculate_volume ( a, b, c ) =
+    a * b * c
 
 
 calculate_surface_area : ( Float, Float, Float ) -> Float
