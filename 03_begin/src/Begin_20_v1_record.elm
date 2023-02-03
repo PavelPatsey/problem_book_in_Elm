@@ -1,4 +1,4 @@
-module Begin_20 exposing (..)
+module Begin_20_v1_record exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)
