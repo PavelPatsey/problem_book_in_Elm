@@ -1,4 +1,4 @@
-module Begin_16 exposing (..)
+module Begin_16_v2_type_coordinates exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)
