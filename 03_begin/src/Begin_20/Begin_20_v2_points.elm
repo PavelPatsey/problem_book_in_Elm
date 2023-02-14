@@ -1,4 +1,4 @@
-module Begin_20_v2_points exposing (..)
+module Begin_20.Begin_20_v2_points exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)

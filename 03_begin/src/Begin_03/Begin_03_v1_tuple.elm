@@ -2,7 +2,7 @@
 -- периметр P = 2·(a + b).
 
 
-module Begin_03_v2_case_of exposing (..)
+module Begin_03.Begin_03_v1_tuple exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)
@@ -14,7 +14,6 @@ import Html.Events exposing (onInput)
 -- MAIN
 
 
-main : Program () Model Msg
 main =
     Browser.sandbox { init = init, update = update, view = view }
 
@@ -70,10 +69,11 @@ view model =
         , div []
             [ text
                 (String.fromInt
-                    (begin_03
-                        ( Maybe.withDefault 0 (String.toInt model.a)
-                        , Maybe.withDefault 0 (String.toInt model.b)
-                        , "area"
+                    (Tuple.first
+                        (begin_03
+                            ( Maybe.withDefault 0 (String.toInt model.a)
+                            , Maybe.withDefault 0 (String.toInt model.b)
+                            )
                         )
                     )
                 )
@@ -82,10 +82,11 @@ view model =
         , div []
             [ text
                 (String.fromInt
-                    (begin_03
-                        ( Maybe.withDefault 0 (String.toInt model.a)
-                        , Maybe.withDefault 0 (String.toInt model.b)
-                        , "perimeter"
+                    (Tuple.second
+                        (begin_03
+                            ( Maybe.withDefault 0 (String.toInt model.a)
+                            , Maybe.withDefault 0 (String.toInt model.b)
+                            )
                         )
                     )
                 )
@@ -93,14 +94,6 @@ view model =
         ]
 
 
-begin_03 : ( Int, Int, String ) -> Int
-begin_03 ( a, b, flag ) =
-    case flag of
-        "perimeter" ->
-            2 * (a + b)
-
-        "area" ->
-            a * b
-
-        _ ->
-            0
+begin_03 : ( Int, Int ) -> ( Int, Int )
+begin_03 ( a, b ) =
+    ( a * b, 2 * (a + b) )
