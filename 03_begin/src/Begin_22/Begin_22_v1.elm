@@ -1,4 +1,4 @@
-module Begin_22.Begin_22 exposing (..)
+module Begin_22.Begin_22_v1 exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)
