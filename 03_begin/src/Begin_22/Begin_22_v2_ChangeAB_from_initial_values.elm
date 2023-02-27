@@ -1,4 +1,4 @@
-module Begin_22.Begin_22_v2_button exposing (..)
+module Begin_22.Begin_22_v2_ChangeAB_from_initial_values exposing (..)
 
 import Browser
 import Html exposing (Html, button, div, input, text)
