@@ -69,7 +69,12 @@ update msg model =
             }
 
         Change_x2 new_x ->
-            { model | point_2 = { x = Maybe.withDefault 0 (String.toFloat new_x), y = model.point_2.y } }
+            { model
+                | point_2 =
+                    { x = Maybe.withDefault 0 (String.toFloat new_x)
+                    , y = model.point_2.y
+                    }
+            }
 
         Change_y2 new_y ->
             { model
