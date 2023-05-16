@@ -27,7 +27,7 @@ type alias Model =
 init : Model
 init =
     { inputA = ""
-    , numberA = 1
+    , numberA = 0
     }
 
 
@@ -56,7 +56,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ div [] [ text "Введите целое число N, равное кол-ву секнуд прошедших с начала суток:" ]
+        [ div [] [ text "Введите целое число N, равное кол-ву секунд прошедших с начала суток:" ]
         , input [ placeholder "", value model.inputA, onInput ChangeA ] []
         , div [] [ text "Количество секунд, прошедших с начала последнего часа:" ]
         , div [] [ text (String.fromInt (modBy 3600 model.numberA)) ]
